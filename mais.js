@@ -36,7 +36,6 @@ const initFn2 = initFn1();
 const initFn3 = initFn3();
 
 initFn3();
-*/
 
 console.log("Curryng")
 /*
@@ -80,7 +79,7 @@ function fn(){
 fn();
 
 */
-
+/*
 console.log('Imutabilidade 1');
 
 const user={
@@ -98,3 +97,102 @@ function usuárioNomeCompleto(user){
 const userWithFullName = usuárioNomeCompleto(user);
 
 console.log(userWithFullName, user);
+
+*/
+/*
+console.log("Imutabilidade 2")
+
+const students=[
+    {
+        name: 'Grace', 
+        grade: 7
+    }, 
+    {
+        name: 'Jennifer', 
+        grade: 4
+    }, 
+    {
+        name: 'Paul', 
+        grade: 10
+    }
+];
+
+function getApprovedStudents(studentsList){
+    return studentsList.filter(student =>student.grade >=7);
+}
+
+console.log("Alunos Aprovados: ");
+console.log(getApprovedStudents(students));
+
+console.log('\nLista de alunos: ')
+console.log(students);
+*/
+
+console.log("Tipos e variáveis")
+/*
+console.log("var, let, const")
+
+var nameVar = "Rod";
+let nameLet = 'Rod';
+const nameConst = "Rod";
+
+console.log("nameVar: ${nameVar}")
+console.log("nameLet: ${nameLet}")
+console.log("nameConst: ${nameConst}")
+
+//Escopo global
+{
+    //Escopo de bloco
+}
+
+function test(){
+    //Escopo local
+}
+*/
+
+/*
+
+var test = 'exemplo';
+(()=>{
+    var test;
+    console.log('Valor dentro da função "${test}"');
+
+    if(true){
+        test = 'Exemplo';
+        console.log('Valor dentro do if "${test}"');
+    }
+    console.log('Valor após a execução do if  "${test}"');
+})();
+
+*/
+
+console.log("TIPOS")
+
+//Retorna o tamanho de uma String
+
+const textSize = 'Texto'.length;
+console.log("Quantidade de letras: " + textSize);
+
+//Retorna um array quebrando a String por um delimitador
+const splittedText = "Texto".split("x");
+console.log('\nArray com as posições pelo delimitador: ' +splittedText);
+
+//Busca por um valor e o substitui por outro
+const replacedText = "Texto".replace("Text", "txeT");
+console.log("\nSubstituição de valor:", replacedText);
+
+//Retorna a "fatia" de um valor
+const lastChar = "Texto".slice(-1);
+console.log('\nÚltima letra de uma String: ', lastChar);
+
+const allWithoutLastChar = "Texto".slice(0, -1);
+console.log('\nValor da String da primeira letra menos a última: ', allWithoutLastChar);
+
+const secondToEnd = "Texto".slice(1);
+console.log('\nValor da string da segunda letra até a última: ', secondToEnd);
+
+//Retorna N caracteres a partir de uma posição
+const twoCharsBeforeFirstPos = 'Texto'.substr(0,2);
+console.log('\nAs duas letras primeiras letras são: ', twoCharsBeforeFirstPos);
+
+Tipos e variáveis 01:58
