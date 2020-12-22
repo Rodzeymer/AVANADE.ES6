@@ -167,7 +167,7 @@ var test = 'exemplo';
 */
 
 console.log("TIPOS")
-
+/*
 //Retorna o tamanho de uma String
 
 const textSize = 'Texto'.length;
@@ -194,5 +194,52 @@ console.log('\nValor da string da segunda letra até a última: ', secondToEnd);
 //Retorna N caracteres a partir de uma posição
 const twoCharsBeforeFirstPos = 'Texto'.substr(0,2);
 console.log('\nAs duas letras primeiras letras são: ', twoCharsBeforeFirstPos);
+*/
+/*
+//Trasnformar número para string
+const myNumber = 12.4032;
 
-Tipos e variáveis 01:58
+const numberAsString = myNumber.toString();
+console.log("Número transformado em string: ", typeof numberAsString);
+
+//Retorna número com um númeto de casas decimais
+const fixedTwoDecimals = myNumber.toFixed(2);
+console.log("\nNúmero com duas casas decimais", fixedTwoDecimals);
+
+//Transforma uma String em float
+console.log("\nString parseada para float: ", parseFloat('13.22'));
+
+//Transforma uma String em int
+console.log("\nString parseada para in: ", parseInt('13.20'));
+
+const nullVariable = null;
+
+console.log(nullVariable);
+
+let undefinedVariable;
+console.log("Tipo de variável: ", typeof undefinedVariable);
+
+const isActive = true;
+const isAuthenticated = false;
+console.log("Tipo de variável: ", typeof isActive);
+
+*/
+
+let user = {
+    name:"Guilherme"
+};
+
+//Alterando a propriedade de um objeto
+user.name = "Outro nome 1";
+user["name"] = "Outro nome 2";
+
+const prop = "name";
+user[prop] = "Outro nome 3";
+
+//Criando uma propriedade
+user.lastName = "Sobrenome!"
+
+//Deletando uma propriedade
+delete user.name;
+
+Tipos e variáveis 12.33
