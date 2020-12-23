@@ -128,7 +128,8 @@ console.log('\nLista de alunos: ')
 console.log(students);
 */
 
-console.log("Tipos e variáveis")
+FUNCTIONS
+//console.log("Tipos e variáveis")
 /*
 console.log("var, let, const")
 
@@ -166,7 +167,7 @@ var test = 'exemplo';
 
 */
 
-console.log("TIPOS")
+//console.log("TIPOS")
 /*
 //Retorna o tamanho de uma String
 
@@ -224,7 +225,7 @@ const isAuthenticated = false;
 console.log("Tipo de variável: ", typeof isActive);
 
 */
-
+/*
 let user = {
     name:"Guilherme"
 };
@@ -241,5 +242,95 @@ user.lastName = "Sobrenome!"
 
 //Deletando uma propriedade
 delete user.name;
+*/
 
-Tipos e variáveis 12.33
+/*
+const user = {
+    name: 'Rodrigo',
+    lastName: "Auad"
+}
+
+//Recupera as chaves do objeto
+console.log("Propriedades do objeto user: ", Object.keys(user));
+
+//Recupera os valores das chaves do objeto
+console.log("\nValores das propriedades do objeto user: ", Object.values(user));
+
+//Recupera um array de arrays contendo [nome_prop, valor_prop]
+console.log("\nLista de propriedades e valores: ", Object.entries(user));
+
+//Mergear propriedades de objetos
+Object.assign(user, {fullName:"Rodrigo Auad"});
+
+console.log("\nAdiciona a propriedade fullName no objeto user", user);
+console.log("\nRetorna um novo objeto mergeando dois ou mais objetos", Object.assign({}, user, {age: 26}))
+
+//Previne todas as alterações em um obbjeto
+const newObj = {foo: 'Bar'};
+Object.freeze(newObj);
+console.log("\nVariável newObj após alterações: ", newObj)
+
+newObj.foo = "changes";
+delete newObj.foo;
+newObj.bar = "foo"
+
+console.log("\nVariável newObj após alterações: ", newObj);
+
+//Permite apenas a alteração de propriedades existentes em um objeto
+const person = {name: "Rodrigo"};
+Object.seal(person);
+
+person.name = "Rodrigo Auad";
+delete person.name;
+person.age = 34;
+
+console.log('\nVariável person após as alterações: ', person);
+
+*/
+/*
+
+const symbol1 = Symbol();
+const symbol2 = Symbol();
+
+//Symbols são únicos
+console.log('Symbol1 é igual a sumbol2: ', symbol1 === symbol2);
+
+//Prevenir conflito entre nomes de propriedades
+const nameSymbol1 = Symbol('name');
+const nameSymbol2 = Symbol('name');
+
+const user = {
+    [nameSymbol1]: 'Rodrigo',
+    [nameSymbol2]: 'Outro',
+    lastName: 'Auad'
+}
+
+console.log(user);
+
+//Symbols criam propriedades que não são enumberables
+for (const key in user){
+    if (user.hasOwnProperty(key)){
+    console.log('\nValor da chave ${key}: ${user[key]}');
+    }
+}
+
+console.log('Propriedades do objeto user: ', Object.keys(user));
+console.log('Valores das propriedades do objeto user: ', Object.values(user));
+
+//Exibir symbols de um objeto
+console.log('Symbols registrados no objeto user: ', Object.getOwnPropertyDescriptor(user));
+
+//Acessando todas as propriedades do objeto
+console.log('Todas as propriedades do objeto user: ', Reflect.ownKeys(user));
+
+//Criar um enum
+const directions={
+    UP: Symbol('UP'),
+    DOWN: Symbol('DOWN'),
+    LEFT: Symbol('LEFT'),
+    RIGHT: Symbol('RIGHT')
+};
+
+*/
+
+fUNCTIONS E OPERADORES 00.00
