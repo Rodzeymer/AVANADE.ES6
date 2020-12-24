@@ -128,7 +128,7 @@ console.log('\nLista de alunos: ')
 console.log(students);
 */
 
-FUNCTIONS
+//FUNCTIONS
 //console.log("Tipos e variáveis")
 /*
 console.log("var, let, const")
@@ -331,6 +331,239 @@ const directions={
     RIGHT: Symbol('RIGHT')
 };
 
-*/
 
-fUNCTIONS E OPERADORES 00.00
+
+function fn(){
+    return 'Code here';
+
+}
+
+const arrowFn = () => 'Code here';
+const arrowFn2 = () =>{
+    //mais de uma expressão
+    return 'Code here';
+}
+//Funções também são objetos
+    fn.prop = 'Posso criar propriedades';
+
+    console.log(fn());
+    console.log(fn.prop);
+
+    //Receber parâmetros
+    const logValue = value => console.log(value);
+    const logFnResult = fnParam => console.log(fnParam());
+
+    logFnResult(fn);
+//Reeber e retornar funções
+const controlFnExec => fnParam => allowed => {
+    if(allowed){
+        fnParam();
+    }
+
+
+const handleFnExecution = controlFnExec(fn);
+handleFnExecution(true); //Executa a função fn
+handleFnExecution(); //Não executará a função fn
+
+//controlFnExec como função
+console.log("OK")
+function controlFnExec(fnParam){
+    return function(allowed){
+        if(allowed){
+            fnParam
+            console.log("OK1")
+        }
+        console.log("OK2")
+    }
+    console.log("OK3")
+}
+console.log("OK4")
+controlFnExec()
+
+
+
+//FUNCTION2
+(()=>{
+    this.name = "arrow funcion";
+
+    const getNameArrowFn = () => this.name;
+    
+    function getName(){
+        return this.name;
+    }
+    
+    const user = {
+        name: "Rodrigo",
+        getNameArrowFn, 
+        getName
+    
+    }
+    
+    console.log(user.getNameArrowFn());
+    console.log(user.getName());
+})();
+
+
+//Array
+
+const users =['André', 'Rodrigo', 'Maria'];
+
+const gender={
+    MAN: Symbol('M'), 
+    WOMAN: Symbol('W')
+}
+
+const persons=[
+    {
+        name:'André', 
+        age:26,
+        gender: gender.MAN
+    },
+    {
+        name:'Rodrigo',
+        age:34,
+        gender: gender.MAN
+    }, 
+    {
+        name: 'Maria',
+        age:43,
+        gender: gender.WOMAN
+    }
+];
+
+//Retornar a quantidade de itens de um array
+console.log('Itens: ', persons.length);
+
+//Verificar se é Array
+console.log('A variável persons é um array: ', Array.isArray(persons));
+
+//Iterar os itens do array
+persons.forEach((person, index, arr)=>{
+    console.log('Nome: ', person.name);
+})
+
+//Filtrar array
+const mens = persons.filter(person=>person.gender === gender.MAN);
+console.log('\nNova lista apenas com homens', mens);
+const womens = persons.filter(person=>person.gender === gender.WOMAN);
+console.log('\nNova lista apenas com mulheres', womens);
+
+//Transformar um novo
+const personWithCourse = persons.map(person =>{
+    person.course = 'Introdução à JavaScript';
+    return person;
+});
+
+console.log('\nPessoas com a adição do course: ', personWithCourse)
+
+//Transformar um array em outro tipo
+const totalAge = persons.reduce((age, person) =>{
+    age += person.age;
+    return age;
+}, 0);
+
+console.log('\nSoma de idades das pessoas', totalAge);
+
+//Juntando operações
+const totalEvenAges = persons.filter(person => person.age %2 === 0)
+.reduce((age, person) => {
+    age+= person.age;
+    return age;
+}, 0);
+
+console.log('\nSoma de idades das pessoas que possuem idade par', totalEvenAges);
+
+
+console.log('Operadores');
+//Módulo (%)
+//Operador binário. retorna o inteiro restante da divisão de dois operandos.
+
+console.log('12 dividido por 5, resto 2 (12 % 5 = 2) retorna 2');
+
+//Incremento (++) e Decremento (--)
+
+++x 
+x++
+
+--x 
+x--
+
+//Negação (-) e Adição (+)
+
+13
++'3' //retorna 3
++true //retorna 1
++false //retorna 0
+-true //retorna -1
+
+//Operador de exponenciação(**)
+2**3 //retorna 9
+10 ** -1 //retorna 0.1
+
+//Operador de agrupamento ()
+2*(3+2) //Retorna 10
+
+//Igualdade (==)
+//Retorna verdadeiro caso os operandos sejam iguais. 3==var2
+'3' == var1
+3=='3'
+
+//Não igual (!=)
+//Retonra verdadeiro caso os operando não sejam iguais. var1 != 4
+var2 != '3'
+
+//Estritamente igual (===)
+//Retorna verdadeiro caso os operandos sejam iguais e do mesmo tipo. Veja também Object .is e igualdade
+3 === var1
+
+//Estritamente não igual (!==)
+//Retorna verdadeiro caso os operandos não sejam iguais e/ou não sejam do mesmo tipo.
+var1 !== '3'
+3 !== '3'
+
+//Maior que (>)
+//Retorna verdadeiro caso o operando da esqueda seja maior que o da direita.
+
+var2 > var1
+'12' > 2
+
+//Maior que ou igual (>=)
+//Retorna verdadeiro caso o operando da esqueda seja maior ou igual ao da direita
+var2 >= var1
+var1>=3
+
+//Menor que (<)
+//Retorna verdadeiro caso o operando da esquerda seja menor que o da direita.
+var1 < var2
+'12' < '2'
+
+//Menor que ou igual(<=)
+//retorna verdadeiro caso o operando da esqueda seja menor ou igual ao da direita.
+var1 <= var2
+var2 <= 5
+
+//Ternário
+Condição ? Valor1; Valor2
+true ? 'foo' ; 'bar'    //Retorna 'foo'
+false ?  'foo';'bar'     //Retorna 'bar'
+
+
+
+
+//Spread ...
+var partes = ['ombro', 'joelhos'];
+var musica = ['cabeca', ...partes, 'e', 'pés'];
+
+function fn(x, y, z){}
+var args = [0, 1, 2];
+fn(...args);
+ //Deletar algo
+ delete algo;
+
+ //Determinar tipo
+ typeof algo;
+
+ */
+
+ Introdução a OO  08.27
+
